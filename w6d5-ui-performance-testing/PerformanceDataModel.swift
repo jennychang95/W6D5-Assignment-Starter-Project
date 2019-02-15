@@ -15,7 +15,7 @@ struct PerformanceDataModel {
         let randomNumber = (Double(arc4random_uniform(1000)) - 500.0) / 1000.0
         
         // Sleep time between 0.5s to 1.5s
-        let sleepTime = 1.0 + randomNumber
+        let sleepTime = 10 + randomNumber
         
         // Sleep for 500ms to 1500ms
         let milliseconds = 1000.0
