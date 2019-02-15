@@ -62,25 +62,30 @@ class w6d5_ui_performance_testingUITests: XCTestCase {
         
         addMeal(mealName: meal, numberOfCalories: calories)
         
+        XCTAssert(app.tables.staticTexts["Cucumber - 30"].exists)
+        
     }
-    
+/*
     func testDeleteFirstMeal() {
- 
+
         let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
         element.children(matching: .table).element.tap()
-        
+
         let firstCell = app.tables.cells.allElementsBoundByIndex.first
         firstCell?.swipeLeft()
         XCUIApplication().tables.buttons["Delete"].tap()
-        
+
     }
+ */
     
     func testDeleteSpecificItem() {
         
         let meal = "mushroom"
-        let calories = 20
+        let calories = 200
         
         deleteMeal(mealName: meal, numberOfCalories: calories)
+        sleep(3)
+        XCTAssertFalse(app.tables.staticTexts["mushroom - 200"].exists)
         
     }
     
