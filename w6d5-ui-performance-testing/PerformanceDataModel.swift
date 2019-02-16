@@ -1,11 +1,3 @@
-//
-//  PerformanceDataModel.swift
-//  w6d5-ui-performance-testing
-//
-//  Created by Roland on 2017-12-20.
-//  Copyright © 2017 Roland. All rights reserved.
-//
-
 import Foundation
 
 struct PerformanceDataModel {

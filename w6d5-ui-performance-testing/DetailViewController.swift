@@ -1,11 +1,3 @@
-//
-//  DetailViewController.swift
-//  w6d3-fetchedresultscontroller
-//
-//  Created by Roland on 2017-12-09.
-//  Copyright © 2017 Roland. All rights reserved.
-//
-
 import UIKit
 
 class DetailViewController: UIViewController {

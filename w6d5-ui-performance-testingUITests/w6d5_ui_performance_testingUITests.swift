@@ -55,7 +55,7 @@ class w6d5_ui_performance_testingUITests: XCTestCase {
         }
     }
 
-    func testAddMeal() {
+    func test_AddMeal() {
         
         let meal = "Cucumber"
         let calories = 30
@@ -78,7 +78,7 @@ class w6d5_ui_performance_testingUITests: XCTestCase {
     }
  */
     
-    func testDeleteSpecificItem() {
+    func test_DeleteSpecificItem() {
         
         let meal = "mushroom"
         let calories = 200
@@ -89,7 +89,7 @@ class w6d5_ui_performance_testingUITests: XCTestCase {
         
     }
     
-    func testShowDetail() {
+    func test_ShowDetail() {
         let meal = "pastry"
         let calories = 500
         
@@ -102,4 +102,24 @@ class w6d5_ui_performance_testingUITests: XCTestCase {
         
     }
 
+    func test_DeletesAllMeals() {
+        let element = app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element
+        element.children(matching: .table).element.tap()
+        
+        
+        for _ in 0..<app.tables.staticTexts.count {
+            
+            if app.tables.staticTexts.count == 0 {
+                return
+            }
+            
+            let cell = app.tables.cells.allElementsBoundByIndex.first
+            cell?.swipeLeft()
+            XCUIApplication().tables.buttons["Delete"].tap()
+        }
+        
+        XCTAssertEqual(app.tables.staticTexts.count, 0)
+        
+    }
+    
 }
